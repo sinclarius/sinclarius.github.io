@@ -27,82 +27,87 @@
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v10'
     });
-
-    map.addLayer({
-        "id": "points",
-        "type": "symbol",
-        "source": {
-            "type": "geojson",
-            "data": {
-              "type": "FeatureCollection",
-              "features": [
-                {
-                  "type": "Feature",
-                  "properties": {
-                    "marker-color": "#000000",
-                    "marker-size": "small",
-                    "marker-symbol": "square-stroked",
-                    "type": "school"
-                  },
-                  "geometry": {
-                    "type": "Point",
-                    "coordinates": [
-                      -106.6189455986023,
-                      35.08133046014629
-                    ]
-                  }
-                },
-                {
-                  "type": "Feature",
-                  "properties": {
-                    "marker-color": "#000000",
-                    "marker-size": "small",
-                    "marker-symbol": "square-stroked",
-                    "type": "school"
-                  },
-                  "geometry": {
-                    "type": "Point",
-                    "coordinates": [
-                      -105.91917335987091,
-                      35.67078524624052
-                    ]
-                  }
-                },
-                {
-                  "type": "Feature",
-                  "properties": {
-                    "marker-color": "#000000",
-                    "marker-size": "small",
-                    "marker-symbol": "square-stroked",
-                    "type": "school"
-                  },
-                  "geometry": {
-                    "type": "Point",
-                    "coordinates": [
-                      8.938681483268738,
-                      45.99747216587312
-                    ]
-                  }
-                },
-                {
-                  "type": "Feature",
-                  "properties": {
-                    "marker-color": "#000000",
-                    "marker-size": "small",
-                    "marker-symbol": "square-stroked",
-                    "type": "school"
-                  },
-                  "geometry": {
-                    "type": "Point",
-                    "coordinates": [
-                      139.61488008499146,
-                      35.59504739085283
-                    ]
-                  }
+    map.on('load', function () {
+        map.addLayer({
+            "id": "points",
+            "type": "symbol",
+            "source": {
+                "type": "geojson",
+                "data": {
+                  "type": "FeatureCollection",
+                  "features": [
+                    {
+                      "type": "Feature",
+                      "properties": {
+                        "title": "UNM School of Architecture and Planning",
+                        "type": "school",
+                        "icon": "college"
+                      },
+                      "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                          -106.6189455986023,
+                          35.08133046014629
+                        ]
+                      }
+                    },
+                    {
+                      "type": "Feature",
+                      "properties": {
+                        "title": "Santa Fe Preparatory School",
+                        "type": "school",
+                        "icon": "school"
+                      },
+                      "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                          -105.91917335987091,
+                          35.67078524624052
+                        ]
+                      }
+                    },
+                    {
+                      "type": "Feature",
+                      "properties": {
+                        "title": "Franklin University Switzerland",
+                        "type": "school",
+                        "icon": "college"
+                      },
+                      "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                          8.938681483268738,
+                          45.99747216587312
+                        ]
+                      }
+                    },
+                    {
+                      "type": "Feature",
+                      "properties": {
+                        "title": "学校法人洗足学園",
+                        "type": "school",
+                        "icon": "school"
+                      },
+                      "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                          139.61488008499146,
+                          35.59504739085283
+                        ]
+                      }
+                    }
+                  ]
                 }
-              ]
+            },
+            "layout": {
+                "icon-image": "{icon}-15",
+                "text-field": "{title}",
+                "text-font": ["Open Sans Semibold", "Arial Unicode MS Bold"],
+                "text-offset": [0, 0.6],
+                "text-anchor": "top"
             }
-    });
+        }
+    );
 });
 
 </script>
