@@ -2,114 +2,64 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>golly gee do i love maps!</title>
+    <title>@sinclarius | design/code</title>
     <script src='https://api.mapbox.com/mapbox-gl-js/v0.36.0/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v0.36.0/mapbox-gl.css' rel='stylesheet' />
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.7.0/css/tachyons.min.css"/>
     <style type="text/css">
-        body {
-          margin: 0;
-          padding: 0;
-        }
-        #map {
-          position: absolute;
-          top: 0;
-          bottom: 0;
-          width: 100%;
-        }
+      #moreids{
+        display: none;
+      }
+      #skills{
+        display: none;
+      }
     </style>
 </head>
-<body>
-<div id="map"></div>
-<script>
-    mapboxgl.accessToken = 'pk.eyJ1Ijoic2luY2xhcml1cyIsImEiOiJjaXBvZjdxOXQwMXFvZnVtM3A4YmFrejN2In0.ze62-HAgTD4AOTZPmRJh_Q';
+<body class="">
+  <header class="vh-100 bg-near-white dt w-100">
+  <div class="dtc v-top-l cover pt6 ph3 ph4-m ph5-l">
+    <div class="fl w-60 f3 helvetica near-black lh-copy">
+      <p>Hi,</p>
+      <p>I'm <span class="fw5">Charlotte</span> (but you can call me <span class="fw5">Charlie</span>). I'm a web developer with an interest in <a href="#0" class="fw5 green link hover-dark-green">cooking</a> and <a href="http://www.openstreetmap.org/user/sinclarius" class="fw5 blue link hover-dark-blue">cartography</a>.</p>
+      <p>You can find my work on <a href="https://www.behance.net/sinclarius" class="fw5 blue link hover-dark-blue">Bēhance</a> and <a href="https://dribbble.com/sinclarius" class="fw5 hot-pink link hover-dark-pink">Dribbble</a>. I post photos on <a href="https://unsplash.com/@sinclarius" class="fw5 purple link hover-dark-purple">Unsplash</a>, <a href="https://www.flickr.com/photos/boinkbonk/collections" class="fw5 hot-pink link hover-dark-pink">Flickr</a>, and <a href="https://www.instagram.com/boinkbonk/" class="fw5 light-red link hover-red">Instagram</a>, and I keep random thoughts on <a href="https://twitter.com/sinclarius" class="fw5 blue link hover-dark-blue">Twitter</a> and <a href="https://medium.com/@sinclarius" class="fw5 green link hover-dark-green">Medium</a>. Most of my code belongs to my employers, but I have some snippets up on <a href="https://github.com/sinclarius/" class="fw5 gray link hover-dark-gray">GitHub</a>, <a href="https://bitbucket.org/sinclarius/" class="fw5 blue link hover-dark-blue">Bitbucket</a> and <a href="https://codepen.io/sinclarius/" class="fw5 hot-pink link hover-dark-pink">CodePen</a>. I keep references and cool ideas on  <a href="https://www.pinterest.se/sinclarius/" class="fw5 light-red link hover-red">Pinterest</a> and <a href="https://boinkbonk.tumblr.com" class="fw5 purple link hover-dark-purple">Tumblr</a>.
+      </p>
+      <p>Presently, my work is focused on a combination of research and data visualization for <a href="https://rs21.io" class="fw5 light-red link hover-red">RS21</a>. However, my background is in art/design, 3D modeling and environmental research. You can find my full CV on <a href="https://www.linkedin.com/in/charlotte-mckernan/" class="fw5 blue link hover-dark-blue">LinkedIn</a>.</p>
+      <!-- <hr> -->
+    </div>
+    <!-- <div class="w-60 helvetica near-black lh">
+      <a onclick="toggleSkills()" class="f5 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib light-silver" href="#0">Skills</a>
+      <a onclick="toggleIds()" class="f5 grow no-underline br-pill ba bw1 ph3 pv2 mb2 dib light-silver" href="#0">More</a>
+      <div id="skills" class="fr pl4 w-third pr4 ba b--dashed b--light-silver"><p class="f5">3ds Max, Houdini, Illustrator, Framer, Maya, Photoshop, Processing, Realflow, Revit, Rhinocerous, Sketch App, Unreal Engine 4, and ZBrush.</p></div>
+      <div id="moreids" class="fr pl4 w-third pr4 ba b--dashed b--light-silver"><p class="f5">3DS friend code: 2449 - 4626 - 7608<br>
+        Steam ID: <a href="http://steamcommunity.com/id/sinclarius" class="fw5 blue link hover-dark-blue">sinclarius</a><br>
+        PSN: <a href="https://my.playstation.com/seiraa" class="fw5 blue link hover-dark-blue">seiraa</a>
+      </div>
+    </div>
+  </div> -->
+</header>
+  <div id="insta">
 
-    var map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/mapbox/streets-v10'
-    });
-    map.on('load', function () {
-        map.addLayer({
-            "id": "points",
-            "type": "symbol",
-            "source": {
-                "type": "geojson",
-                "data": {
-                  "type": "FeatureCollection",
-                  "features": [
-                    {
-                      "type": "Feature",
-                      "properties": {
-                        "title": "UNM School of Architecture and Planning",
-                        "type": "school",
-                        "icon": "college"
-                      },
-                      "geometry": {
-                        "type": "Point",
-                        "coordinates": [
-                          -106.6189455986023,
-                          35.08133046014629
-                        ]
-                      }
-                    },
-                    {
-                      "type": "Feature",
-                      "properties": {
-                        "title": "Santa Fe Preparatory School",
-                        "type": "school",
-                        "icon": "school"
-                      },
-                      "geometry": {
-                        "type": "Point",
-                        "coordinates": [
-                          -105.91917335987091,
-                          35.67078524624052
-                        ]
-                      }
-                    },
-                    {
-                      "type": "Feature",
-                      "properties": {
-                        "title": "Franklin University Switzerland",
-                        "type": "school",
-                        "icon": "college"
-                      },
-                      "geometry": {
-                        "type": "Point",
-                        "coordinates": [
-                          8.938681483268738,
-                          45.99747216587312
-                        ]
-                      }
-                    },
-                    {
-                      "type": "Feature",
-                      "properties": {
-                        "title": "学校法人洗足学園",
-                        "type": "school",
-                        "icon": "school"
-                      },
-                      "geometry": {
-                        "type": "Point",
-                        "coordinates": [
-                          139.61488008499146,
-                          35.59504739085283
-                        ]
-                      }
-                    }
-                  ]
-                }
-            },
-            "layout": {
-                "icon-image": "{icon}-15",
-                "text-field": "{title}",
-                "text-font": ["Open Sans Semibold", "Arial Unicode MS Bold"],
-                "text-offset": [0, 0.6],
-                "text-anchor": "top"
-            }
-        }
-    );
-});
+  </div>
 
-</script>
+<!-- <script>
+//fix this soggy code you lazy bum
+  function toggleSkills() {
+    var x = document.getElementById('skills')
+    if (x.style.display === 'block') {
+      x.style.display = 'none'
+    } else {
+      x.style.display = 'block'
+    }
+  }
+  function toggleIds() {
+    var x = document.getElementById('moreids')
+    if (x.style.display === 'block') {
+      x.style.display = 'none'
+    } else {
+      x.style.display = 'block'
+    }
+  }
+
+</script> -->
 </body>
 </html>
