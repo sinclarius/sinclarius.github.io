@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/sinclarius/sinclarius.github.io#readme",
   "dependencies": {
-    "mapbox-gl": "^0.36.0"
+    "mapbox-gl": "^0.36.0",
+    "pug": "^2.0.0-rc.2"
   }
 }
