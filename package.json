@@ -1,24 +1,23 @@
 {
-  "name": "sinclarius",
+  "name": "how-to-test",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "run-script-os",
+    "start:win32": "browser-sync start --server --files '**/*.css, **/*.html, **/*.js, !node_modules/**/*' --directory --port 7777 --browser \"C:\\Program Files\\Firefox Developer Edition\\firefox.exe\"",
+    "//": "Hello! If you are having trouble running this command. Try changing Firefox Developer Edition to FirefoxDeveloperEdition",
+    "start:darwin:linux": "browser-sync start --server --files '**/*.css, *.html, **/*.js, !node_modules/**/*' --directory --port 7777 --browser 'Firefox Developer Edition'"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sinclarius/sinclarius.github.io.git"
-  },
-  "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/sinclarius/sinclarius.github.io/issues"
+  "devDependencies": {
+    "browser-sync": "^2.24.5",
+    "gulp": "^3.9.1",
+    "gulp-pug": "^4.0.1",
+    "gulp-sass": "^4.0.1",
+    "pug": "^2.0.3",
+    "run-script-os": "^1.0.3"
   },
-  "homepage": "https://github.com/sinclarius/sinclarius.github.io#readme",
-  "dependencies": {
-    "mapbox-gl": "^0.36.0",
-    "pug": "^2.0.0-rc.2"
-  }
+  "dependencies": {}
 }
