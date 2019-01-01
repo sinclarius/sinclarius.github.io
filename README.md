@@ -1,9 +1,1 @@
-# personal site
-
-```
-# install dependencies
-npm install
-
-# run browsersync dev server
-gulp start
-```
+# personal site (old ver.)
